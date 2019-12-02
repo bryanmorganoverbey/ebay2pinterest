@@ -33,9 +33,9 @@ for line in infile:
 			try:
 				# Make Add
 				pin = pinterest.pin(
-					board_id='460282093105681293',   # need to change this to be a new ebay board
+					board_id='460282093105823109',   # need to change this to be a new ebay board
 					image_url = product.galleryURL,
-					description = product.title,
+					description = product.sellingStatus.currentPrice.value + ' | ' + product.title,
 					link = product.viewItemURL)  # need to change this to be my affiliate link
 				# print(product.detail_page_url)
 				time.sleep(random.randint(60,120))
@@ -45,22 +45,6 @@ for line in infile:
     except:
 		print("got here 3: " + line)
 		pass
-
-
-# try:
-#     api = Finding(config_file='ebay.yaml', siteid="EBAY-US")
-#     response = api.execute('findItemsAdvanced', {'keywords': 'lord of the rings'})
-#     # print(response.reply)
-#     for item in response.reply.searchResult.item:
-#         print("Title: " + item.title + " , Price: " + item.sellingStatus.currentPrice.value + " image: ", item.pictureURLLarge)
-# except ConnectionError as e:
-#     print(e)
-#     print(e.response.dict())
-
-
-
-
-
 
 
 
