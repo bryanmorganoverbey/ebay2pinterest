@@ -1,0 +1,3 @@
+# Ignore the yaml config file
+*.yaml
+config.py
